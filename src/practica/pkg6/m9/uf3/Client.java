@@ -25,13 +25,13 @@ public class Client {
             missatge1 = new byte[512];
             //Creem el datagramPacket que utlitzarem per enviar el missatge.
             dp = new DatagramPacket(missatge1, missatge1.length);
-            //
+            
             socket.receive(dp);
             //Indiquem la llargaria i la guardem en una variable.
             int mida = dp.getLength();
             //S'inicialitza l'array on es guardara el missatge amb la mida indicada.
             missatge2 = new byte[mida];
-            //
+            
             System.arraycopy(missatge1, 0, missatge2, 0, mida);
             //Es guarda el missatge.
             cadena = new String(missatge2);
